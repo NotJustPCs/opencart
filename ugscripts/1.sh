@@ -1,4 +1,4 @@
-./config.sh
+. config.sh
 
 db_connect="mysql -h $db_hostname -u $db_user -p$db_pw $db_name -e"
 

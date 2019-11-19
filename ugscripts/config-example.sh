@@ -3,4 +3,4 @@ db_name="YOURDBNAME"
 db_user="YOURDBUSER"
 db_pw="YOURDBPW"
 
-echo 'Variables loaded'
+echo 'Variables loaded'.$db_hostname
