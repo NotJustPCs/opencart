@@ -1,25 +1,27 @@
-. config.sh
+./config.sh
 
 db_connect="mysql -h $db_hostname -u $db_user -p$db_pw $db_name -e"
 
-# Remove themes
+echo $db_hostname
+
+echo 'Remove themes'
 rm -rf /home/gascentre/test.thegascentre.co.uk/catalog/view/theme
 mkdir /home/gascentre/test.thegascentre.co.uk/catalog/view/theme
 
-# Make all database changes
+echo 'Make all database changes'
 $db_connect "call pre0c3()"
 
 # rm /home/gascentre/test.thegascentre.co.uk/*
-# Delete the test storage folder
+echo 'Delete the test storage folder'
 rm -rf /home/gascentre/test.storage
 
-# Copy OC3 files over the top of the working test site
-rsync -av --exclude-from '/home/gascentre/repositories/opencart-njpc-gc/copyexclusions.txt' /home/gascentre/repositories/opencart-njpc-gc/upload/ /home/gascentre/test.thegascentre.co.uk
+echo 'Copy OC3 files over the top of the working test site'
+rsync -av --exclude-from '/home/gascentre/repositories/opencart-njpc-gc/ugscripts/copyexclusions.txt' /home/gascentre/repositories/opencart-njpc-gc/upload/ /home/gascentre/test.thegascentre.co.uk
 
-# Delete the OC3 cache
+echo 'Delete the OC3 cache'
 cd /home/gascentre/test.thegascentre.co.uk/system/storage/cache
 rm -R -- */
 find . ! -name 'index.html' -type f -exec rm -f {} +
 
-# Copy the edited OC3 config files over the existing ones
+echo 'Copy the edited OC3 config files over the existing ones'
 rsync -av --exclude-from '/home/gascentre/repositories/opencart-njpc-gc/copyexclusions.txt' /home/gascentre/tmp/testsite/PostOC3ug/ /home/gascentre/test.thegascentre.co.uk
