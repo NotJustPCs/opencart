@@ -1,0 +1,2 @@
+- /home/gascentre/public_html/system/storage/cache/*
+- *.DS_Store

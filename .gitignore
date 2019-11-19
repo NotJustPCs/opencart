@@ -34,7 +34,7 @@
 /upload/system/storage/upload/*
 !/upload/system/storage/upload/index.html
 
-# Flags 
+# Flags
 # remove sharp char if you want to add flags to gitignore
 # /upload/flags/*
 
@@ -56,3 +56,10 @@
 
 # IDE Project files
 /.idea
+
+# Windows and Synology rubbish
+*.DS_Store
+*.db
+
+# Upgrade script Config
+/ugscripts/config.sh
