@@ -3,4 +3,4 @@ db_name="YOURDBNAME"
 db_user="YOURDBUSER"
 db_pw="YOURDBPW"
 
-echo 'Variables loaded'.$db_hostname
+db_connect="mysql -h $db_hostname -u $db_user -p$db_pw $db_name -e"
