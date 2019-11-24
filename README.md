@@ -1,3 +1,34 @@
+# OC3 upgrade testing
+
+## Headlines
+- [x] Script to replicate test
+- [x] Script to upgrade test core to OC3
+- [ ] Theme
+- [ ] Extensions
+- [ ] Litespeed
+
+## Extensions
+- [ ] SagePay
+- [ ] PayPal
+- [ ] UKSB Feeds
+- [ ] FB Pixel / Catalog
+- [ ] Gift voucher
+- [ ] GTM
+- [ ] MailChimp
+- [ ] Cookie banner
+- [ ] Postage options (bigger topic)
+- [ ] Cookie banner
+- [ ] Abandoned cart emails
+- [ ] Postcode checkers
+- [ ] Product Manager
+
+
+
+
+
+
+
+
 # OpenCart
 
 ## Overview
