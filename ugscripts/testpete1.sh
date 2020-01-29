@@ -26,4 +26,4 @@ rm -R -- */
 find . ! -name 'index.html' -type f -exec rm -f {} +
 
 echo "Copy the edited OC3 config files over the existing ones"
-rsync -av --exclude-from '/home/gascentre/repositories/opencart-njpc-gc/ugscripts/copyexclusions.txt' /home/gascentre/tmp/testsite/PostOC3ug/ /home/gascentre/testpete.thegascentre.co.uk
+rsync -av --exclude-from '/home/gascentre/repositories/opencart-njpc-gc/ugscripts/copyexclusions.txt' /home/gascentre/tmp/testsite/PostOC3ugpete/ /home/gascentre/testpete.thegascentre.co.uk
