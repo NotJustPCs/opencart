@@ -5,6 +5,9 @@ BEGIN
   UPDATE `oc_setting` SET `value` = 'error.log' WHERE `key` LIKE 'config_error_filename';
   UPDATE `oc_setting` SET `theme_default_status` = '1' WHERE `code` = 'theme_default';
 
+  DELETE FROM oc_event;
+  ALTER TABLE oc_event CHANGE sort_order sort_order INT(3) NOT NULL DEFAULT '0';
+
   UPDATE oc_product SET subtract = 1,weight = 30 WHERE product_id = 67;
   UPDATE oc_product SET subtract = 0,weight = 24 WHERE product_id = 64;
   UPDATE oc_product SET subtract = 0,weight = 12 WHERE product_id = 65;
