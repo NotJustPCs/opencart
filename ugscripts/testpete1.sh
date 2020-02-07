@@ -13,6 +13,9 @@ rm -rf /home/gascentre/testpete.thegascentre.co.uk/system/gdpr.ocmod.xml
 echo "Remove old postcode checker"
 rm -rf /home/gascentre/testpete.thegascentre.co.uk/postcodechecker
 
+echo "Remove planetholder"
+rm -rf /home/gascentre/testpete.thegascentre.co.uk/planetholder
+
 echo "Make all database changes"
 $db_connect "call pre0c3()"
 
