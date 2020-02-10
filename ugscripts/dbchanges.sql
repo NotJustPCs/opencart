@@ -1,13 +1,17 @@
 DELIMITER //
 CREATE OR REPLACE PROCEDURE pre0c3()
 BEGIN
-  UPDATE `oc_setting` SET `value` = 0 WHERE `key` LIKE 'module_%_status';
-  UPDATE `oc_setting` SET `value` = 'error.log' WHERE `key` LIKE 'config_error_filename';
-  UPDATE `oc_setting` SET `theme_default_status` = '1' WHERE `code` = 'theme_default';
+  UPDATE oc_setting SET `value` = 0 WHERE `key` LIKE 'module_%_status';
+  UPDATE oc_setting SET `value` = 'error.log' WHERE `key` LIKE 'config_error_filename';
+--  UPDATE `oc_setting` SET `theme_default_status` = '1' WHERE `code` = 'theme_default';
 
-  UPDATE oc_product_description SET description = REPLACE(description,'&lt;p&gt;&lt;iframe align=&quot;center&quot; frameborder=&quot;no&quot; height=&quot;96px&quot; name=&quot;frame1&quot; scrolling=&quot;no&quot; src=&quot;/postcodechecker/postcodechecker.html&quot; width=&quot;574px&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;','') WHERE description LIKE '%&lt;p&gt;&lt;iframe align=&quot;center&quot; frameborder=&quot;no&quot; height=&quot;96px&quot; name=&quot;frame1&quot; scrolling=&quot;no&quot; src=&quot;/postcodechecker/postcodechecker.html&quot; width=&quot;574px&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;%';
+  UPDATE oc_product_description SET description = REPLACE(description,'&lt;p&gt;&lt;iframe align=&quot;center&quot; frameborder=&quot;no&quot; height=&quot;96px&quot; name=&quot;frame1&quot; scrolling=&quot;no&quot; src=&quot;/postcodechecker/postcodechecker.html&quot; width=&quot;574px&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;','&lt;div id=&quot;#gas-postcode-checker&quot;&gt;&lt;/div&gt;') WHERE description LIKE '%&lt;p&gt;&lt;iframe align=&quot;center&quot; frameborder=&quot;no&quot; height=&quot;96px&quot; name=&quot;frame1&quot; scrolling=&quot;no&quot; src=&quot;/postcodechecker/postcodechecker.html&quot; width=&quot;574px&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;%';
 
-  UPDATE `oc_option` SET `type` = 'radio' WHERE `oc_option`.`option_id` = 2;
+  UPDATE oc_option SET `type` = 'radio' WHERE `oc_option`.`option_id` = 2;
+
+  UPDATE oc_product SET calltoorder = calltoorder + 1;
+  UPDATE oc_product SET calltoorder = 0 WHERE calltoorder = 2;
+  ALTER TABLE oc_product CHANGE `calltoorder` `hide_cart` TINYINT(1) NOT NULL DEFAULT '1';
 
   DELETE FROM oc_event;
   ALTER TABLE oc_event CHANGE sort_order sort_order INT(3) NOT NULL DEFAULT '0';
