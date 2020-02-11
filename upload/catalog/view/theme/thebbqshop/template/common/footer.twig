@@ -1,0 +1,77 @@
+<footer>
+  <div class="container">
+    <div class="row">
+	  <div class="col-sm-3 column last">
+		<h5>How To Find Us</h5>
+		<ul class="list-unstyled">
+		  <li class="indent">
+			The BBQ Shop</br>
+			145 High Street</br>
+			Old Woking</br>
+			Surrey</br>
+			GU22 9JW
+		  </li>
+		  <li class="indent">T: <a href="tel:+441483760750">01483 760750</a></li>
+		  <li class="indent">E: <a href="mailto:shop@thebbqshop.co.uk">shop@thebbqshop.co.uk</a></li>
+		</ul>
+	  </div>
+      <div class="col-sm-3">
+        <h5>Opening Hours</h5>
+        <ul class="list-unstyled">
+          <li class="indent">Monday-Saturday: 9:00am-5:00pm</li>
+		  <li class="indent">Sunday: Closed</li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>{{ text_extra }}</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+          <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+          <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+          <li><a href="{{ special }}">{{ text_special }}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>{{ text_account }}</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ account }}">{{ text_account }}</a></li>
+          <li><a href="{{ order }}">{{ text_order }}</a></li>
+          <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-3">
+      </div>
+      <div class="col-sm-6 text-center">
+        <h3>Sign up - Get the latest smokin' hot updates</h3>
+        <p>Be the first to hear about our special offers, what's new at The BBQ Shop and get expert cooking tips all heading straight to your inbox.</p>
+        <form class="form-inline" action="" method="POST">
+          <div class="form-group">
+            <input type="email" name="email" value="" placeholder="Email address" class="form-control" />
+            <input type="submit" class="btn btn-default" value="Sign up" />
+          </div>
+        </form>
+        <p class="disclaimer">You can opt out of hearing from us at any time using the unsubscribe link in our emails. Read our full <a href="">privacy policy</a>.</p>
+      </div>
+      <div class="col-sm-3">
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-sm-6">
+        <p class="fine-print">&copy;{{ "now"|date("Y") }} The Gas Centre & BBQ Shop Ltd.</p>
+      </div>
+      <div class="col-sm-6">
+      	<p class="fine-print text-right"><a href="#">Terms & Conditions</a> <a href="#">Accessibility</a> <a href="#">Privacy & Cookies</a</p>
+      	</ul>
+      </div>
+    </div>
+  </div>
+</footer>
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+</body></html>
