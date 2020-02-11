@@ -16,6 +16,9 @@ rm -rf /home/gascentre/public_html/postcodechecker
 echo "Remove planetholder"
 rm -rf /home/gascentre/public_html/planetholder
 
+echo "Remove vqmod"
+rm -rf /home/gascentre/public_html/vqmod
+
 echo "Make all database changes"
 $db_connect "call pre0c3()"
 

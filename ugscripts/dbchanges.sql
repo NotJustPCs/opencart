@@ -5,7 +5,7 @@ BEGIN
   UPDATE oc_setting SET `value` = 'error.log' WHERE `key` LIKE 'config_error_filename';
 --  UPDATE `oc_setting` SET `theme_default_status` = '1' WHERE `code` = 'theme_default';
 
-  UPDATE oc_product_description SET description = REPLACE(description,'&lt;p&gt;&lt;iframe align=&quot;center&quot; frameborder=&quot;no&quot; height=&quot;96px&quot; name=&quot;frame1&quot; scrolling=&quot;no&quot; src=&quot;/postcodechecker/postcodechecker.html&quot; width=&quot;574px&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;','&lt;div id=&quot;#gas-postcode-checker&quot;&gt;&lt;/div&gt;') WHERE description LIKE '%&lt;p&gt;&lt;iframe align=&quot;center&quot; frameborder=&quot;no&quot; height=&quot;96px&quot; name=&quot;frame1&quot; scrolling=&quot;no&quot; src=&quot;/postcodechecker/postcodechecker.html&quot; width=&quot;574px&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;%';
+  UPDATE oc_product_description SET description = REPLACE(description,'&lt;p&gt;&lt;iframe align=&quot;center&quot; frameborder=&quot;no&quot; height=&quot;96px&quot; name=&quot;frame1&quot; scrolling=&quot;no&quot; src=&quot;/postcodechecker/postcodechecker.html&quot; width=&quot;574px&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;','&lt;div id=&quot;gas-postcode-checker&quot;&gt;&lt;/div&gt;') WHERE description LIKE '%&lt;p&gt;&lt;iframe align=&quot;center&quot; frameborder=&quot;no&quot; height=&quot;96px&quot; name=&quot;frame1&quot; scrolling=&quot;no&quot; src=&quot;/postcodechecker/postcodechecker.html&quot; width=&quot;574px&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;%';
 
   UPDATE oc_option SET `type` = 'radio' WHERE `oc_option`.`option_id` = 2;
 
