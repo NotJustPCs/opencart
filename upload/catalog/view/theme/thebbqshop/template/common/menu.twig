@@ -23,8 +23,12 @@
 					<li><a href="{{ child.href }}">{{ child.name }}</a></li>
 					{% endfor %}
 				  </ul>
-				  {% endfor %}</div>
-				<a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> </div>
+				  {% endfor %}
+				</div>
+				<div class="dropdown-inner">
+				  <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> 
+				</div>
+			  </div>
 			</li>
 			{% else %}
 			<li><a href="{{ category.href }}">{{ category.name }}</a></li>
@@ -47,7 +51,8 @@
 					{% endfor %}
 				  </ul>
 				  {% endfor %}</div>
-				<a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> </div>
+				<a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> 
+			  </div>
 			</li>
 			{% else %}
 			<li><a href="{{ category.href }}">{{ category.name }}</a></li>

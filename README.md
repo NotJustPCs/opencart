@@ -9,17 +9,17 @@
 
 ## Extensions
 - [ ] SagePay
-- [ ] PayPal
-- [ ] UKSB Feeds
+- [x] PayPal
+- [x] UKSB Feeds
 - [ ] FB Pixel / Catalog
 - [ ] Gift voucher
 - [ ] GTM
 - [ ] MailChimp
 - [ ] Cookie banner
-- [ ] Postage options (bigger topic)
+- [x] Postage options (bigger topic)
 - [ ] Cookie banner
 - [ ] Abandoned cart emails
-- [ ] Postcode checkers
+- [x] Postcode checkers
 - [ ] Product Manager
 
 

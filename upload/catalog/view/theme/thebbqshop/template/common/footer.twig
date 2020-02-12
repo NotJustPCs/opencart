@@ -23,13 +23,16 @@
         </ul>
       </div>
       <div class="col-sm-3">
-        <h5>{{ text_extra }}</h5>
+	  {% if informations %}
+        <h5>{{ text_information }}</h5>
         <ul class="list-unstyled">
-          <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
-          <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
-          <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
-          <li><a href="{{ special }}">{{ text_special }}</a></li>
+          {% for information in informations %}
+          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% endfor %}
+		  <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+		  <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
         </ul>
+      {% endif %}
       </div>
       <div class="col-sm-3">
         <h5>{{ text_account }}</h5>
@@ -65,7 +68,7 @@
         <p class="fine-print">&copy;{{ "now"|date("Y") }} The Gas Centre & BBQ Shop Ltd.</p>
       </div>
       <div class="col-sm-6">
-      	<p class="fine-print text-right"><a href="#">Terms & Conditions</a> <a href="#">Accessibility</a> <a href="#">Privacy & Cookies</a</p>
+      	<p class="fine-print text-right"><a href="/terms">Terms & Conditions</a> <a href="/privacy-policy">Privacy & Cookies</a</p>
       	</ul>
       </div>
     </div>
