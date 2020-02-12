@@ -1,0 +1,15 @@
+<div id="custom_grid{{ module }}" class="custom-grid">
+    {% for row in banners|batch(columns) %}
+        <div class="row">
+        {% for banner in row %}
+            <div class="col-xs-12 col-sm-{{ 12 // columns }} form-group">
+				{% if banner.link %}
+				<a href="{{ banner.link }}"><img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" /></a>
+				{% else %}
+				<img src="{{ banner.image }}" alt="{{ banner.title }}" class="img-responsive" />
+				{% endif %}
+            </div>
+        {% endfor %}
+        </div>
+	{% endfor %}
+</div>
