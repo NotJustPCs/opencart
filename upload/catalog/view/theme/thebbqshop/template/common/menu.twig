@@ -1,67 +1,94 @@
-{% if categories %}
-<div class="container">
   <nav id="menu" class="navbar">
-    <div class="navbar-header">
-      <div class="row">
-      	<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+    <div class="row">
+      <div class="col-sm-5 hidden-xs">
+      	  <div class="header-contacts">T: <a href="tel:+441483760750">+44 (0) 1483 760750</a> | E: <a href="mailto:shop@thebbqshop.co.uk">shop@thebbqshop.co.uk</a></div>
       </div>
-      <div class="row">
-      	<span class="navbar-toggle-label">MENU</span>
+      <div class="col-xs-2">
+    	<a href="/"><div class="logo-1"></div></a>
+      </div>
+      <div class="col-xs-10 col-sm-5">
+			<div class="header-icons">
+			  <div class="row">
+				<div class="col-xs-2">
+				</div>
+				<div class="col-xs-6 col-sm-8">
+				  {{ search }}
+				</div>
+				<div class="col-xs-2">
+				  {{ cart }}
+				</div>
+				<div class="col-xs-2 hidden-md">
+					<div class="navbar-header">
+					  <div class="row">
+						<button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+					  </div>
+					  <div class="row">
+						<span class="navbar-toggle-label">MENU</span>
+					  </div>
+					</div>
+				</div>
+			  </div>
+			</div>
       </div>
     </div>
     <div class="row">
-      <div class="col-sm-6">
-		<div class="collapse navbar-collapse navbar-ex1-collapse navbar-1">
-		  <ul class="nav navbar-nav">
-			{% for category in categories|slice(0,3) %}
-			{% if category.children %}
-			<li class="dropdown"><a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
-			  <div class="dropdown-menu">
-				<div class="dropdown-inner"> {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
-				  <ul class="list-unstyled">
-					{% for child in children %}
-					<li><a href="{{ child.href }}">{{ child.name }}</a></li>
-					{% endfor %}
-				  </ul>
-				  {% endfor %}
-				</div>
-				<div class="dropdown-inner">
-				  <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> 
-				</div>
-			  </div>
-			</li>
-			{% else %}
-			<li><a href="{{ category.href }}">{{ category.name }}</a></li>
-			{% endif %}
-			{% endfor %}
-		  </ul>
-		</div>
+      <div class="col-sm-5">
+		{% if categories %}
+			<div class="collapse navbar-collapse navbar-ex1-collapse navbar-1">
+			  <ul class="nav navbar-nav">
+				{% for category in categories|slice(0,3) %}
+				{% if category.children %}
+				<li class="dropdown"><a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
+				  <div class="dropdown-menu">
+					<div class="dropdown-inner"> {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+					  <ul class="list-unstyled">
+						{% for child in children %}
+						<li><a href="{{ child.href }}">{{ child.name }}</a></li>
+						{% endfor %}
+					  </ul>
+					  {% endfor %}
+					</div>
+					<div class="dropdown-inner">
+					  <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> 
+					</div>
+				  </div>
+				</li>
+				{% else %}
+				<li><a href="{{ category.href }}">{{ category.name }}</a></li>
+				{% endif %}
+				{% endfor %}
+			  </ul>
+			</div>
+		{% endif %} 
       </div>
-      <div class="col-sm-6">
-		<div class="collapse navbar-collapse navbar-ex1-collapse navbar-2">
-		  <ul class="nav navbar-nav navbar-right">
-			{% for category in categories|slice(3,3) %}
-			{% if category.children %}
-			<li class="dropdown"><a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
-			  <div class="dropdown-menu">
-				<div class="dropdown-inner"> {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
-				  <ul class="list-unstyled">
-					{% for child in children %}
-					<li><a href="{{ child.href }}">{{ child.name }}</a></li>
-					{% endfor %}
-				  </ul>
-				  {% endfor %}</div>
-				<a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> 
-			  </div>
-			</li>
-			{% else %}
-			<li><a href="{{ category.href }}">{{ category.name }}</a></li>
-			{% endif %}
-			{% endfor %}
-		  </ul>
-		</div>
+      <div class="col-sm-2 hidden-xs">
+      	<a href="/"><div class="logo-2"></div></a>
+      </div>
+      <div class="col-sm-5">
+		{% if categories %}
+			<div class="collapse navbar-collapse navbar-ex1-collapse navbar-2">
+			  <ul class="nav navbar-nav navbar-right">
+				{% for category in categories|slice(3,3) %}
+				{% if category.children %}
+				<li class="dropdown"><a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
+				  <div class="dropdown-menu">
+					<div class="dropdown-inner"> {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
+					  <ul class="list-unstyled">
+						{% for child in children %}
+						<li><a href="{{ child.href }}">{{ child.name }}</a></li>
+						{% endfor %}
+					  </ul>
+					  {% endfor %}</div>
+					<a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> 
+				  </div>
+				</li>
+				{% else %}
+				<li><a href="{{ category.href }}">{{ category.name }}</a></li>
+				{% endif %}
+				{% endfor %}
+			  </ul>
+			</div>
+		{% endif %} 
       </div>
     </div>
   </nav>
-</div>
-{% endif %} 
